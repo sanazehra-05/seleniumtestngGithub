@@ -1,0 +1,57 @@
+package demo;
+
+import java.time.Duration;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+public class OrangeHRM {
+
+	public WebDriver driver;
+
+	@BeforeTest
+	public void setup() {
+
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+	}
+
+	@Test(priority = 1)
+	public void loginOrangeHRM() {
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("username")));
+		driver.findElement(By.name("username")).sendKeys("Admin");
+		driver.findElement(By.name("password")).sendKeys("admin123");
+		driver.findElement(By.xpath("//button[text()=' Login ']")).click();
+
+		Assert.assertEquals(driver.getTitle(), "OrangeHRM");
+
+	}
+
+	@Test(priority = 2)
+	public void logoutOrangeHRM() {
+
+		driver.findElement(By.xpath("//p[@class='oxd-userdropdown-name']")).click();
+		driver.findElement(By.xpath("//a[text()='Logout']")).click();
+
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+	}
+
+	@AfterTest
+	public void teardown() {
+
+		
+		driver.close();
+		driver.quit();
+	}
+
+}
