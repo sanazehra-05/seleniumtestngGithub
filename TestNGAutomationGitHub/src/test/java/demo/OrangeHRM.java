@@ -1,8 +1,11 @@
 package demo;
 
 import java.time.Duration;
+import java.util.Set;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -14,6 +17,7 @@ import org.testng.annotations.Test;
 public class OrangeHRM {
 
 	public WebDriver driver;
+	public String parentId;
 
 	@BeforeTest
 	public void setup() {
@@ -36,10 +40,28 @@ public class OrangeHRM {
 		Assert.assertEquals(driver.getTitle(), "OrangeHRM");
 
 	}
-
+	
+	
 	@Test(priority = 2)
+	public void helpOrangeHRM() {
+
+		parentId = driver.getWindowHandle();
+		driver.findElement(By.xpath("//button[@title='Help']")).click();
+		Set<String> ids = driver.getWindowHandles();
+		for(String id : ids) {
+			if(!parentId.equalsIgnoreCase(id)) {
+				driver.switchTo().window(id);
+			}
+		}
+		
+        WebElement search =driver.findElement(By.xpath("//input[@id='query']"));
+		Assert.assertNotNull(search);
+	}
+
+	@Test(priority = 3)
 	public void logoutOrangeHRM() {
 
+		driver.switchTo().window(parentId);
 		driver.findElement(By.xpath("//p[@class='oxd-userdropdown-name']")).click();
 		driver.findElement(By.xpath("//a[text()='Logout']")).click();
 
