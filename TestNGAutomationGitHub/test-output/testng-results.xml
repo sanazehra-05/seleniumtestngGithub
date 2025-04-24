@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-07T05:11:48 PDT" name="Suite" finished-at="2025-04-07T05:12:14 PDT" duration-ms="25915">
+  <suite started-at="2025-04-23T06:13:50 PDT" name="Suite" finished-at="2025-04-23T06:14:38 PDT" duration-ms="48028">
     <groups>
     </groups>
-    <test started-at="2025-04-07T05:11:48 PDT" name="Test" finished-at="2025-04-07T05:12:14 PDT" duration-ms="25915">
+    <test started-at="2025-04-23T06:13:50 PDT" name="Test" finished-at="2025-04-23T06:14:38 PDT" duration-ms="48028">
       <class name="demo.OrangeHRM">
-        <test-method is-config="true" signature="setup()[pri:0, instance:demo.OrangeHRM@36ebc363]" started-at="2025-04-07T05:11:48 PDT" name="setup" finished-at="2025-04-07T05:12:08 PDT" duration-ms="20022" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:demo.OrangeHRM@45752059]" started-at="2025-04-23T06:13:50 PDT" name="setup" finished-at="2025-04-23T06:14:12 PDT" duration-ms="21862" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="loginOrangeHRM()[pri:1, instance:demo.OrangeHRM@36ebc363]" started-at="2025-04-07T05:12:08 PDT" name="loginOrangeHRM" finished-at="2025-04-07T05:12:10 PDT" duration-ms="2017" status="PASS">
+        <test-method signature="loginOrangeHRM()[pri:1, instance:demo.OrangeHRM@45752059]" started-at="2025-04-23T06:14:12 PDT" name="loginOrangeHRM" finished-at="2025-04-23T06:14:18 PDT" duration-ms="5422" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginOrangeHRM -->
-        <test-method signature="logoutOrangeHRM()[pri:2, instance:demo.OrangeHRM@36ebc363]" started-at="2025-04-07T05:12:10 PDT" name="logoutOrangeHRM" finished-at="2025-04-07T05:12:13 PDT" duration-ms="3270" status="PASS">
+        <test-method signature="helpOrangeHRM()[pri:2, instance:demo.OrangeHRM@45752059]" started-at="2025-04-23T06:14:18 PDT" name="helpOrangeHRM" finished-at="2025-04-23T06:14:37 PDT" duration-ms="19298" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- helpOrangeHRM -->
+        <test-method signature="logoutOrangeHRM()[pri:3, instance:demo.OrangeHRM@45752059]" started-at="2025-04-23T06:14:37 PDT" name="logoutOrangeHRM" finished-at="2025-04-23T06:14:38 PDT" duration-ms="932" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logoutOrangeHRM -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:demo.OrangeHRM@36ebc363]" started-at="2025-04-07T05:12:13 PDT" name="teardown" finished-at="2025-04-07T05:12:14 PDT" duration-ms="563" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:demo.OrangeHRM@45752059]" started-at="2025-04-23T06:14:38 PDT" name="teardown" finished-at="2025-04-23T06:14:38 PDT" duration-ms="265" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
