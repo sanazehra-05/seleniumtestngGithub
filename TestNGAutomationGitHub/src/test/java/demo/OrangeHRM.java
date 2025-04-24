@@ -23,7 +23,7 @@ public class OrangeHRM {
 
 	@Parameters("Browser")
 	@BeforeTest
-	public void setup(String browserName) {
+	public void setup(String browserName ) {
 
 		System.out.println("browser name is here: " + browserName);
 		if(browserName.equals("chrome")) {
