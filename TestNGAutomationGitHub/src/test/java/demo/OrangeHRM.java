@@ -7,11 +7,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class OrangeHRM {
@@ -19,10 +21,16 @@ public class OrangeHRM {
 	public WebDriver driver;
 	public String parentId;
 
+	@Parameters("Browser")
 	@BeforeTest
-	public void setup() {
+	public void setup(String browserName) {
 
-		driver = new ChromeDriver();
+		System.out.println("browser name is here: " + browserName);
+		if(browserName.equals("chrome")) {
+			driver = new ChromeDriver();
+		}else if(browserName.equals("edge")) {
+			driver = new EdgeDriver();
+		}
 		driver.manage().window().maximize();
 		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
