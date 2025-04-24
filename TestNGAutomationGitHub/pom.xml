@@ -45,7 +45,7 @@
 		<pluginManagement><!-- lock down plugins versions to avoid using Maven
 			defaults (may be moved to parent pom) -->
 			<plugins>
-				
+
 				<plugin>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>3.13.0</version>
@@ -53,8 +53,18 @@
 				<plugin>
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>3.3.0</version>
+					<configuration>
+						<suiteXmlFiles>
+							<suiteXmlFile>
+								testng.xml
+							</suiteXmlFile>
+						</suiteXmlFiles>
+						<systemPropertyVariables>
+						<browser>${Browser}</browser>
+						</systemPropertyVariables>
+					</configuration>
 				</plugin>
-				
+
 			</plugins>
 		</pluginManagement>
 	</build>
